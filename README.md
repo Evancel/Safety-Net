@@ -25,16 +25,16 @@ Switch to the development branch 0.2.x-dev to work on the latest development cod
 
 List all available branches in your local repository to confirm that the correct branches are present.
 
-### Solution:  
- $ git clone https://github.com/hyperskill-content/Safety-net-study-repository.git  
- $ dir  
- $ cd "Safety-net-study-repository"  
- $ git checkout -b 0.2.x-dev origin/0.2.x-dev  
- $ git branch -a  
+### Solution Stage 1/7:Clone and switch:  
+$ git clone https://github.com/hyperskill-content/Safety-net-study-repository.git  
+$ dir  
+$ cd "Safety-net-study-repository"  
+$ git checkout -b 0.2.x-dev origin/0.2.x-dev  
+$ git branch -a  
 
 
- ## Work on project. Stage 2/7:New feature
- ### Description
+## Work on project. Stage 2/7:New feature
+### Description
 In this stage, you will delve deeper into feature development. In our project, new features are developed in isolated branches to avoid conflicts with the main codebase. This approach is critical for maintaining code stability and ensuring that new features are thoroughly tested before being merged into the main branch.
 
 Your task is to create a new feature branch from an existing development branch, create a new file, implement a simple mathematical function, and commit the changes. This process mirrors real-world software development practices where teams work on new features in separate branches and merge them together when done.
@@ -54,7 +54,7 @@ def addition(a, b):
 Stage and commit the changes with the commit message: feat: new function addition
 At this point, there should be a total of 4 commits in the feature/math branch, including the one you just made.
 
-### Solution:  
+### Solution Stage 2/7:New feature:  
 $ git checkout 0.2.x-dev  
 $ git branch feature/math  
 $ git checkout feature/math  
@@ -93,14 +93,14 @@ Fast-forward
   0.2.x-dev
 * main
 
-  ### Solution:  
-  $ git checkout main  
-  $ git merge feature/math  
-  $ git branch -d feature/math  
-  $ git branch  
+### Solution Stage 3/7:Merge and Delete: 
+$ git checkout main  
+$ git merge feature/math  
+$ git branch -d feature/math  
+$ git branch  
 
-  ## Work on project. Stage 4/7:Cherry-pick
-  ### Description
+## Work on project. Stage 4/7:Cherry-pick
+### Description
 Typically, features are merged into development branches rather than directly into the main branch. This branch is reserved for production-ready code. Since feature/math was designated a feature branch, we should have merged it into the 0.2.x-dev development branch instead of the main branch.
 
 In this stage, you will correct this mistake. You will use Git's cherry-pick command to transfer the necessary commit from main to 0.2.x-dev and then reset the main branch to its original state, ensuring that only the initial commit remains. This is a common task in real-world projects when managing multiple branches.
@@ -137,18 +137,18 @@ $ git log --oneline
 7j8k9l0 feat: new function get_numbers
 abc123 feat: Initial
 
- ### Solution:  
- $ git checkout 0.2.x-dev  
- $ git checkout main
- $ git log --name-only to see the hashcode of the last commit  
- $ git cherry-pick HASH=?1f2d3e4  
- $ git commit -m "new function addition"
- $ git checkout main  
- $ git log  
- $ git reset --hard abc123  
+### Solution Stage 4/7:Cherry-pick: 
+$ git checkout 0.2.x-dev  
+$ git checkout main
+$ git log --name-only to see the hashcode of the last commit  
+$ git cherry-pick HASH=?1f2d3e4  
+$ git commit -m "new function addition"
+$ git checkout main  
+$ git log  
+$ git reset --hard abc123  
 
- ## Work on project. Stage 5/7:Restore
- ### Description
+## Work on project. Stage 5/7:Restore  
+### Description  
 Now that your main codebase is stable, let's focus on another essential task in collaborative software development: restoring files to a previous state. This is a common scenario when unwanted or incorrect changes have been introduced into a codebase. You may often need to revert specific files or entire sections of a project back to a known, stable version. This ability to "undo" changes is crucial in maintaining code quality and stability, especially when working with multiple collaborators on a shared repository.
 
 Your colleagues have accidentally introduced unrequested features into the feature/case branch. Your task is to help them by restoring the case_operations.py file to a previous commit and committing the changes with a clear and descriptive message.
@@ -164,12 +164,12 @@ Commit the changes: after restoring the file, stage and commit the changes with 
 
 Verify the branch: ensure that the feature/case branch contains the correct number of commits and that the restored file matches the content from the 6b2ec72 commit.
 
- ### Solution:  
- $ git checkout feature/case !!!  
- $ git checkout 6b2ec72 case_operations.py  
- $ git add .  
- $ git commit -m "refactor: restored case operations from 6b2ec72"  
- $ git log  
+### Solution Stage 5/7:Restore:    
+$ git checkout feature/case !!!  
+$ git checkout 6b2ec72 case_operations.py  
+$ git add .  
+$ git commit -m "refactor: restored case operations from 6b2ec72"  
+$ git log  
 
 ## Work on project. Stage 6/7:Another feature
 ### Description
@@ -192,7 +192,7 @@ Delete the feature/case branch: once the merge is complete, delete the feature/c
 
 Verify the repository state: ensure that the 0.2.x-dev branch now contains the commits from the feature/case branch and that the feature/case branch has been successfully deleted.
 
-### Solution:
+### Solution Stage 6/7:Another feature:  
 $ git checkout feature/case  
 $ git rebase 0.2.x-dev  
 $ git checkout 0.2.x-dev  
@@ -227,7 +227,7 @@ Verify the repository: ensure that the 0.2.x branch contains the correct number 
 
 Your project is now prepared for production deployment.
  
-### Solution:  
+### Solution Stage 7/7:Release:
 $ git checkout 0.2.x-dev  
 $ git branch 0.2.x  
 $ git checkout 0.2.x  
