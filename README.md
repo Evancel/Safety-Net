@@ -26,7 +26,7 @@ Switch to the development branch 0.2.x-dev to work on the latest development cod
 List all available branches in your local repository to confirm that the correct branches are present.
 
 ### Solution:
- $ git clone https://github.com/hyperskill-content/Safety-net-study-repository.git
+ $ git clone https://github.com/hyperskill-content/Safety-net-study-repository.git  
  $ dir
  $ cd "Safety-net-study-repository"
  $ git checkout -b 0.2.x-dev origin/0.2.x-dev
