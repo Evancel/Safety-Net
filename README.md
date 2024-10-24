@@ -30,10 +30,8 @@ $ git clone https://github.com/hyperskill-content/Safety-net-study-repository.gi
 $ dir  
 $ cd "Safety-net-study-repository"  
 $ git checkout -b 0.2.x-dev origin/0.2.x-dev  
-$ git branch -a  
-
-
-
+$ git branch -a      
+  
 ## Work on project. Stage 2/7:New feature
 ### Description
 In this stage, you will delve deeper into feature development. In our project, new features are developed in isolated branches to avoid conflicts with the main codebase. This approach is critical for maintaining code stability and ensuring that new features are thoroughly tested before being merged into the main branch.
