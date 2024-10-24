@@ -1,5 +1,5 @@
 # Safety-Net
-the second project to work with Git commands
+(the second project to work with Git commands)
 
 ## Work on project. Stage 1/7:Clone and switch
 
@@ -31,6 +31,7 @@ $ dir
 $ cd "Safety-net-study-repository"  
 $ git checkout -b 0.2.x-dev origin/0.2.x-dev  
 $ git branch -a  
+
 
 
 ## Work on project. Stage 2/7:New feature
