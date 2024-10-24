@@ -25,12 +25,12 @@ Switch to the development branch 0.2.x-dev to work on the latest development cod
 
 List all available branches in your local repository to confirm that the correct branches are present.
 
-### Solution:
+### Solution:  
  $ git clone https://github.com/hyperskill-content/Safety-net-study-repository.git  
- $ dir
- $ cd "Safety-net-study-repository"
- $ git checkout -b 0.2.x-dev origin/0.2.x-dev
- $ git branch -a
+ $ dir  
+ $ cd "Safety-net-study-repository"  
+ $ git checkout -b 0.2.x-dev origin/0.2.x-dev  
+ $ git branch -a  
 
 
  ## Work on project. Stage 2/7:New feature
@@ -54,13 +54,14 @@ def addition(a, b):
 Stage and commit the changes with the commit message: feat: new function addition
 At this point, there should be a total of 4 commits in the feature/math branch, including the one you just made.
 
-### Solution:
-$ git checkout 0.2.x-dev
-$ git branch feature/math
-$ git checkout feature/math
-$ git status
-$ git add .
-$ git commit -m "feat: new function addition"
+### Solution:  
+$ git checkout 0.2.x-dev  
+$ git branch feature/math  
+$ git checkout feature/math  
+$ git status  
+ ... create a file named math_operations.py  
+$ git add .  
+$ git commit -m "feat: new function addition"  
 
 ## Work on project. Stage 3/7:Merge and Delete
 ### Description
@@ -92,11 +93,11 @@ Fast-forward
   0.2.x-dev
 * main
 
-  ### Solution:
-  $ git checkout main
-  $ git merge feature/math
-  $ git branch -d feature/math
-  $ git branch
+  ### Solution:  
+  $ git checkout main  
+  $ git merge feature/math  
+  $ git branch -d feature/math  
+  $ git branch  
 
   ## Work on project. Stage 4/7:Cherry-pick
   ### Description
@@ -136,12 +137,15 @@ $ git log --oneline
 7j8k9l0 feat: new function get_numbers
 abc123 feat: Initial
 
- ### Solution:
- $ git checkout 0.2.x-dev
- $ git show
- $ git cherry-pick 1f2d3e4
+ ### Solution:  
+ $ git checkout 0.2.x-dev  
  $ git checkout main
- $ git reset --hard abc123
+ $ git log --name-only to see the hashcode of the last commit  
+ $ git cherry-pick HASH=?1f2d3e4  
+ $ git commit -m "new function addition"
+ $ git checkout main  
+ $ git log  
+ $ git reset --hard abc123  
 
  ## Work on project. Stage 5/7:Restore
  ### Description
@@ -160,12 +164,12 @@ Commit the changes: after restoring the file, stage and commit the changes with 
 
 Verify the branch: ensure that the feature/case branch contains the correct number of commits and that the restored file matches the content from the 6b2ec72 commit.
 
- ### Solution:
- $ git branch feature/case origin/feature/case
- $ git checkout 6b2ec72 case_operations.py
- $ git add .
- $ git commt -m "refactor: restored case operations from 6b2ec72"
- $ git log
+ ### Solution:  
+ $ git checkout feature/case !!!  
+ $ git checkout 6b2ec72 case_operations.py  
+ $ git add .  
+ $ git commit -m "refactor: restored case operations from 6b2ec72"  
+ $ git log  
 
 ## Work on project. Stage 6/7:Another feature
 ### Description
@@ -189,14 +193,14 @@ Delete the feature/case branch: once the merge is complete, delete the feature/c
 Verify the repository state: ensure that the 0.2.x-dev branch now contains the commits from the feature/case branch and that the feature/case branch has been successfully deleted.
 
 ### Solution:
-$ git checkout feature/case
-$ git rebase 0.2.x-dev
-$ git checkout 0.2.x-dev
-$ git merge feature/case
-$ git branch -D feature/case
-$ git show
-$ git status
-$ git branch
+$ git checkout feature/case  
+$ git rebase 0.2.x-dev  
+$ git checkout 0.2.x-dev  
+$ git merge feature/case  
+$ git branch -D feature/case  
+$ git show  
+$ git status  
+$ git branch  
 
 
 ## Work on project. Stage 7/7:Release
@@ -223,10 +227,12 @@ Verify the repository: ensure that the 0.2.x branch contains the correct number 
 
 Your project is now prepared for production deployment.
  
-### Solution:
-$ git checkout 0.2.x-dev
-$ git branch 0.2.x
-$ git checkout 0.2.x
-$ git add .
-$ git commit -m "fix: bug-fix make_upper"
-$ git show
+### Solution:  
+$ git checkout 0.2.x-dev  
+$ git branch 0.2.x  
+$ git checkout 0.2.x  
+..change the file case_operations.py  
+$ git add .  
+$ git commit -m "fix: bug-fix make_upper"  
+$ git show  
+$ git checkout 0.2.x-dev  
