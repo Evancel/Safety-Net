@@ -38,12 +38,15 @@ This project simulates real-world Git workflows, covering cloning, branching, me
 ```bash
 # Clone repository
 git clone https://github.com/hyperskill-content/Safety-net-study-repository.git
-
 # Create and switch branches
 git checkout -b feature/math origin/0.2.x-dev
-
 # Commit new feature
 git commit -m "feat: new function addition"
-
 # Merge feature branch into main
 git merge feature/math
+```
+
+### 🔗 Project Source
+[View the Hyperskill project description here](https://hyperskill.org/projects/500)
+
+For detailed solutions by stage, see 👉 **[STAGES.md](STAGES.md)**
